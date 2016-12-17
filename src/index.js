@@ -1,2 +1,9 @@
-import clickclack from './clickclack';
-console.log(clickclack('a', 'b', 'c'));
+import clickclack from 'clickclack';
+
+(function() {
+  const textarea = document.querySelector('.ta');
+  const watcher = clickclack(textarea, {
+    onIdle: () => {},
+    onActive: () => {}
+  });
+}());
