@@ -9,12 +9,15 @@
     "test:watch": "NODE_PATH=./src BABEL_ENV=test mocha --opts ./mocha.opts --reporter min --watch",
     "build": "webpack -d --display-error-details --config webpack.config.js",
     "build:watch": "webpack -d --display-error-details --config webpack.config.js --watch",
-    "build:production": "webpack -p --config webpack.config.js"
+    "deploy": "node_modules/.bin/babel src/clickclack.js -o dist/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/icodejs/clickclack.git"
   },
+  "files": [
+    "dist/index.js"
+  ],
   "keywords": [
     "input",
     "textbox",
@@ -22,7 +25,13 @@
     "idle",
     "active",
     "monitor",
-    "keyboard"
+    "keyboard",
+    "HTMLElement",
+    "EventEmitter",
+    "pub-sub",
+    "interact",
+    "events",
+    "docuevid"
   ],
   "author": "icodejs",
   "license": "MIT",
@@ -42,10 +51,14 @@
     "chai": "^3.5.0",
     "eslint": "^3.12.2",
     "eslint-plugin-mocha": "^4.7.0",
+    "jsdom": "^9.9.1",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0",
     "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "lodash.throttle": "^4.1.1"
   }
 }

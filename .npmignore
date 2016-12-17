@@ -1,4 +1,7 @@
-node_modules
-.DS_Store
-test
-dump
+example/
+test/
+dump/
+src/
+
+mocha.opts
+webpack.config.js
