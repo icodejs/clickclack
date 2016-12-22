@@ -4,7 +4,7 @@
   "description": "Monitor text input activity and fire events when transitioning from idle to active. Edit",
   "main": "dist/index.js",
   "scripts": {
-    "lint:js": "eslint ./ --ext 'js,jsx'",
+    "lint:js": "eslint ./src --ext 'js'",
     "test": "NODE_PATH=./src BABEL_ENV=test mocha --opts ./mocha.opts",
     "test:watch": "NODE_PATH=./src BABEL_ENV=test mocha --opts ./mocha.opts --reporter min --watch",
     "build": "webpack -d --display-error-details --config webpack.config.js",

@@ -78,4 +78,4 @@ module.exports = class ClickClack extends EventEmitter {
       this.busy();
     }, this.busyDelay);
   }
-}
+};
