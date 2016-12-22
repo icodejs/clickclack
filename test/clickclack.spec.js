@@ -106,7 +106,6 @@ describe('ClickClack', () => {
   });
 
   afterEach(function() {
-    clock.tick(idleDelay); // when idle for n seconds reset is called internally
     clock.restore();
     activeSpy.reset();
     idleSpy.reset();
