@@ -5,7 +5,7 @@
 
 The motivation for this module was to provide a mechanism for monitoring how a user might interact with an input text box, and fire events when the user transitions from idle to active to busy.
 
-The intention was to use it within a video annotation web application called <a href="https://docuevid.com" target="_blank">Docuevid</a>, to decide whether or not to pause, start or slow down a video based on a users activity, to aid the annotation process.
+The intention was to use it within a video annotation web application called <a href="https://docuevid.com" target="_blank">Docuevid</a>, to decide whether or not to pause, start or slow down a video based on a users activity, thus aiding the annotation process.
 
 ## Getting Started
 Install ClickClack as an npm module and save it to your package.json file as a dependency:
