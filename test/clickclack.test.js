@@ -28,13 +28,13 @@ describe('ClickClack', () => {
     busySpy = spy();
     clock = useFakeTimers();
 
+    typeCharacter = () => element.dispatchEvent(event);
     simulateActivity = () => {
       for (let i = 0; i < busyDelay / 1000; i++) {
-        element.dispatchEvent(event);
+        typeCharacter();
         clock.tick(1000);
       }
     };
-    typeCharacter = () => element.dispatchEvent(event);
 
     cc.on('active', activeSpy);
     cc.on('idle', idleSpy);
