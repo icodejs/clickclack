@@ -1,6 +1,6 @@
 {
   "name": "clickclack",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Monitor text input activity and fire events when transitioning from idle to active. Edit",
   "main": "dist/index.js",
   "scripts": {
