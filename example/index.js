@@ -2,10 +2,11 @@ const ClickClack = require('clickclack');
 
 const watcher = new ClickClack({
   element: document.querySelector('.ta'),
-  activeEvent: 'keyup',
+  activeEvent: 'keypress',
   idleEvent: 'blur',
   idleDelay: 3000,
   busyDelay: 6000,
+  blacklistedKeys: ['v', 'alt+m', 'shift+s', 'shift+s+d'],
 });
 
 watcher.on('active', () => {

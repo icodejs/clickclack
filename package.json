@@ -59,6 +59,7 @@
     "webpack": "^1.14.0"
   },
   "dependencies": {
+    "combokeys": "^2.4.6",
     "lodash.throttle": "^4.1.1"
   }
 }

@@ -27,7 +27,7 @@ const textarea = document.querySelector('.textarea');
 
 const watcher = new ClickClack({
   element: textarea,
-  activeEvent: 'keyup',
+  activeEvent: 'keypress',
   idleEvent: 'blur',
   idleDelay: 3000,
   busyDelay: 6000
@@ -62,7 +62,7 @@ HTMLElement that will be monitored for user interactions.
 
 Type: `string`
 
-Default: `keyup`
+Default: `keypress`
 
 HTMLElement event that will define user activity.
 
