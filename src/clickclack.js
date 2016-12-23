@@ -21,15 +21,15 @@ module.exports = class ClickClack extends EventEmitter {
   }
 
   addInputListeners() {
-    if (this.element.tagName === 'INPUT' || this.element.tagName === 'TEXTAREA') {
-      this.element.addEventListener(this.activeEvent, throttle(() =>
-        this.registerActivity(), sec(0.5)));
-
-      this.element.addEventListener(this.idleEvent, () =>
-        this.idle());
-    } else {
-      throw new TypeError('ClickClack currently only supports input and textarea elements');
+    if (!(this.element instanceof window.HTMLElement)) {
+      throw new TypeError('ClickClack only accepts a HTMLElement');
     }
+
+    this.element.addEventListener(this.activeEvent, throttle(() =>
+      this.registerActivity(), sec(0.5)));
+
+    this.element.addEventListener(this.idleEvent, () =>
+      this.idle());
   }
 
   reset() {

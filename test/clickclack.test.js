@@ -18,7 +18,7 @@ describe('ClickClack', () => {
     busyDelay = 6000;
 
   beforeEach(function() {
-    element = document.createElement('textarea');
+    element = document.createElement('input');
     args = { element, idleDelay, busyDelay };
     cc = new ClickClack(args);
     event = new window.KeyboardEvent('keyup', { code: 67 });
