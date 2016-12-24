@@ -1,6 +1,6 @@
 {
   "name": "clickclack",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Monitor HTMLElement activity and fire events when transitioning from idle to active.",
   "main": "dist/index.js",
   "scripts": {
