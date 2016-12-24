@@ -30,7 +30,8 @@ const watcher = new ClickClack({
   activeEvent: 'keypress',
   idleEvent: 'blur',
   idleDelay: 3000,
-  busyDelay: 10000
+  busyDelay: 10000,
+  blacklistedKeys: ['v', 'alt+m', 'shift+s', 'shift+s+d'],
 });
 
 watcher.on('active', () => {
@@ -92,6 +93,14 @@ Type: `number` *(milliseconds)*
 Default: `10000`
 
 Duration of activity needed to fire a busy event.
+
+#### blacklistedKeys
+
+Type: `array` *(string)*
+
+Default: `[]`
+
+List of characters or key combinations that do not count as user activity.
 
 ## License
 
