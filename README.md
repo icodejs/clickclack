@@ -30,7 +30,7 @@ const watcher = new ClickClack({
   activeEvent: 'keypress',
   idleEvent: 'blur',
   idleDelay: 3000,
-  busyDelay: 6000
+  busyDelay: 10000
 });
 
 watcher.on('active', () => {
