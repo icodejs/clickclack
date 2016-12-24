@@ -34,7 +34,7 @@ const simulateActivity = (el) => {
   }
 };
 
-const createInstance = (options = {}) => {
+const setup = (options = {}) => {
   const element = document.createElement('input');
   const defaults = {
     element,
@@ -60,14 +60,14 @@ const createInstance = (options = {}) => {
 
 describe('ClickClack', () => {
   it('calls supplied "active" listener when specified event is fired', () => {
-    const element = createInstance();
+    const element = setup();
 
     typeCharacter(element);
     expect(activeSpy).to.have.been.called;
   });
 
   it('fires the "ative" event when specified event is fired', () => {
-    const element = createInstance();
+    const element = setup();
 
     eventEmitterStub = stub(clickclack, 'emit');
     typeCharacter(element);
@@ -76,7 +76,7 @@ describe('ClickClack', () => {
   });
 
   it('calls supplied "idle" listener when specified event is fired after (n) period of inactivity', () => {
-    const element = createInstance();
+    const element = setup();
 
     typeCharacter(element);
     expect(activeSpy).to.have.been.called;
@@ -86,7 +86,7 @@ describe('ClickClack', () => {
   });
 
   it('fires the "idle" event when  specified event is fired after (n) period of inactivity', () => {
-    const element = createInstance();
+    const element = setup();
 
     eventEmitterStub = stub(clickclack, 'emit');
 
@@ -98,14 +98,14 @@ describe('ClickClack', () => {
   });
 
   it('calls supplied "busy" listener after (n) period of activity', () => {
-    const element = createInstance();
+    const element = setup();
 
     simulateActivity(element);
     expect(busySpy).to.have.been.called;
   });
 
   it('fires the "busy" event after (n) period of activity', () => {
-    const element = createInstance();
+    const element = setup();
 
     eventEmitterStub = stub(clickclack, 'emit');
     simulateActivity(element);
@@ -131,7 +131,7 @@ describe('ClickClack', () => {
   });
 
   it('removes event listener when instructed', () => {
-    const element = createInstance();
+    const element = setup();
 
     typeCharacter(element);
     expect(activeSpy).to.have.been.called;
@@ -144,13 +144,13 @@ describe('ClickClack', () => {
   });
 
   it('doesn\'t register activity for black listed characters', () => {
-    const element = createInstance({ blacklistedKeys: ['v', 'c'] });
+    const element = setup({ blacklistedKeys: ['v', 'c'] });
     typeCharacter(element);
     expect(activeSpy).to.not.have.been.called;
   });
 
   it('doesn\'t register activity for black listed characters combinations', () => {
-    const element = createInstance({ blacklistedKeys: ['v', 'alt+v'] });
+    const element = setup({ blacklistedKeys: ['v', 'alt+v'] });
     typeCharacter(element, 'v', true);
     expect(activeSpy).to.not.have.been.called;
   });
