@@ -24,16 +24,15 @@ module.exports = class ClickClack extends EventEmitter {
     this.blacklistedKeys = blacklistedKeys.map(String);
     this.isBlacklistedKey = false;
 
+    if (!(this.element instanceof window.HTMLElement)) {
+      throw new TypeError('The element attribute supplied to the constructor must be of type HTMLElement');
+    }
 
     this.addBlackListedKeyListeners();
     this.addInputListeners();
   }
 
   addInputListeners() {
-    if (!(this.element instanceof window.HTMLElement)) {
-      throw new TypeError('ClickClack only accepts a HTMLElement');
-    }
-
     this.element.addEventListener(this.activeEvent, throttle((e) =>
       this.registerActivity(e), sec(0.5)));
 
@@ -79,8 +78,8 @@ module.exports = class ClickClack extends EventEmitter {
   }
 
   registerActivity(e) {
-    if (this.blacklisted || isModifierKey(e.key)) {
-      this.blacklisted = false;
+    if (this.isBlacklistedKey || isModifierKey(e.key)) {
+      this.isBlacklistedKey = false;
       return;
     }
 
@@ -101,6 +100,6 @@ module.exports = class ClickClack extends EventEmitter {
   }
 
   isBlackListed() {
-    this.blacklisted = true;
+    this.isBlacklistedKey = true;
   }
 };
