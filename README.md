@@ -100,7 +100,7 @@ Type: `array` *(string)*
 
 Default: `[]`
 
-List of characters or key combinations that do not constitute user activity.
+List of characters and/or key combinations that do not constitute user activity.
 
 ## License
 
