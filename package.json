@@ -9,7 +9,7 @@
     "test:watch": "NODE_PATH=./src BABEL_ENV=test mocha --opts ./mocha.opts --reporter min --watch",
     "build": "webpack -d --display-error-details --config webpack.config.js",
     "build:watch": "webpack -d --display-error-details --config webpack.config.js --watch",
-    "deploy": "node_modules/.bin/babel src/clickclack.js -o dist/index.js"
+    "npm:release": "node_modules/.bin/babel src/clickclack.js -o dist/index.js"
   },
   "repository": {
     "type": "git",
