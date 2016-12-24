@@ -1,6 +1,6 @@
 var path = require('path');
 var paths = {
-  OUT: 'dist',
+  OUT: 'example',
   ENTRY_POINT: 'example/index.js',
 };
 var config = {};
