@@ -89,7 +89,7 @@ Duration of inactivity needed, after being active, to fire an idle event.
 
 Type: `number` *(milliseconds)*
 
-Default: `6000`
+Default: `10000`
 
 Duration of activity needed to fire a busy event.
 
