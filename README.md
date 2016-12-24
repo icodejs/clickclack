@@ -31,7 +31,7 @@ const watcher = new ClickClack({
   idleEvent: 'blur',
   idleDelay: 3000,
   busyDelay: 10000,
-  blacklistedKeys: ['v', 'alt+m', 'shift+s', 'shift+s+d'],
+  blacklistedKeys: ['v', 'alt+m', 'shift+s', 'shift+s+d', '1', '2'],
 });
 
 watcher.on('active', () => {

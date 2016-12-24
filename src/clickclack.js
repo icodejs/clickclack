@@ -21,8 +21,9 @@ module.exports = class ClickClack extends EventEmitter {
     this.idleEvent = idleEvent;
     this.idleDelay = idleDelay;
     this.busyDelay = busyDelay;
-    this.blacklistedKeys = blacklistedKeys;
-    this.blacklisted = false;
+    this.blacklistedKeys = blacklistedKeys.map(String);
+    this.isBlacklistedKey = false;
+
 
     this.addBlackListedKeyListeners();
     this.addInputListeners();

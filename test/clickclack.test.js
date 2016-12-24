@@ -152,7 +152,17 @@ describe('ClickClack', () => {
   it('doesn\'t register activity for black listed characters combinations', () => {
     const element = setup({ blacklistedKeys: ['v', 'alt+v'] });
     typeCharacter(element, 'v', true);
-    expect(activeSpy).to.not.have.been.called;
+    typeCharacter(element, 't');
+    expect(activeSpy).to.not.have.been.calledOnce;
+  });
+
+  it('gracefully handles blacklisted numbers supplied as integer', () => {
+    const element = setup({ blacklistedKeys: [1, 2, 3] });
+    typeCharacter(element, '1');
+    typeCharacter(element, '2');
+    typeCharacter(element, '3');
+    typeCharacter(element, '4');
+    expect(activeSpy).to.not.have.been.calledThrice;
   });
 
   afterEach(function() {
