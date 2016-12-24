@@ -7,6 +7,8 @@ The motivation for this module was to provide a mechanism for monitoring how a u
 
 The intention was to use it within a video annotation web application called <a href="https://docuevid.com" target="_blank">Docuevid</a>, to decide whether or not to pause, start or slow down a video based on a users activity, thus aiding the annotation process.
 
+## [Demo]
+
 ## Getting Started
 Install ClickClack as an npm module and save it to your package.json file as a dependency:
 
@@ -105,3 +107,6 @@ List of characters and/or key combinations that do not constitute user activity.
 ## License
 
 MIT © [icodejs ltd](https://icodejs.com)
+
+
+[Demo]: https://icodejs.github.io/clickclack/
