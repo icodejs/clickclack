@@ -1,6 +1,6 @@
 {
   "name": "clickclack",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Monitor HTMLElement activity and fire events when transitioning from idle to active.",
   "main": "dist/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "build:watch": "webpack -d --display-error-details --config webpack.config.js --watch",
     "release": "node_modules/.bin/babel src/clickclack.js -o dist/index.js",
     "ghpages": "webpack -d --display-error-details --config webpack.config.js && cp example/bundle.js docs/assets/js/",
-    "pre-publish" :"npm run release && npm run ghpages"
+    "pre-publish": "npm run release && npm run ghpages"
   },
   "repository": {
     "type": "git",
